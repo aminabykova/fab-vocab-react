@@ -1,0 +1,226 @@
+/* Word detail screen */
+
+.screen {
+  padding:
+    50px
+    var(--page-gutter)
+    calc(112px + env(safe-area-inset-bottom, 0px));
+}
+
+.controls {
+  display: flex;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.backIcon {
+  transform: rotate(180deg);
+}
+
+.editLink {
+  margin-left: auto;
+}
+
+.deleteButton {
+  width: 36px;
+  padding: var(--space-xs);
+}
+
+.layout {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.card {
+  min-width: 0;
+  min-height: 116px;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+}
+
+.card h1 {
+  font-size: 24px;
+  font-weight: var(--font-weight-black);
+  overflow-wrap: anywhere;
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-black);
+}
+
+.speechBadge {
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-lg);
+  background: var(--ink);
+  color: var(--paper);
+
+  font-size: var(--font-size-sm);
+}
+
+.cardDark {
+  color: var(--paper);
+}
+
+.cardDark .speechBadge {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.information {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.infoCard {
+  min-width: 0;
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+}
+
+.infoCard h2 {
+  margin-bottom: var(--space-xs);
+
+  color: var(--gray);
+  font-size: var(--font-size-sm);
+  line-height: 16px;
+  font-weight: var(--font-weight-black);
+  text-transform: uppercase;
+}
+
+.infoCard p {
+  line-height: var(--font-size-lg);
+  overflow-wrap: anywhere;
+}
+
+.examplesCard {
+  min-height: 152px;
+}
+
+.ghost {
+  color: var(--gray);
+}
+
+.exampleField {
+  display: flex;
+  align-items: center;
+
+  height: 36px;
+  margin-top: var(--space-sm);
+  padding: 0 10px;
+  border-radius: var(--radius-sm);
+  background: var(--muted);
+}
+
+.exampleField input {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+
+  font-size: var(--font-size-sm);
+}
+
+.exampleField button {
+  display: flex;
+  padding: var(--space-2xs) 0 var(--space-2xs) var(--space-xs);
+  border: 0;
+  background: transparent;
+
+  transition: opacity var(--transition-fast);
+}
+
+.exampleField button:hover {
+  opacity: 0.7;
+}
+
+/* Practice progress */
+
+.practiceHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xs);
+}
+
+.practiceHeading span {
+  font-size: var(--font-size-md);
+}
+
+.practiceBars {
+  display: flex;
+  gap: var(--space-2xs);
+  margin: var(--space-sm) 0;
+}
+
+.practiceBars span {
+  flex: 1;
+  height: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--canvas);
+}
+
+.practiceBars .earned {
+  background: var(--ink);
+}
+
+.practiceStats {
+  display: flex;
+  gap: var(--space-2xl);
+}
+
+.practiceStats dt {
+  margin-bottom: var(--space-2xs);
+
+  color: var(--gray);
+  font-size: var(--font-size-sm);
+}
+
+.practiceStats dd {
+  font-size: var(--font-size-md);
+}
+
+/* Small phones */
+
+@media (max-width: 359px) {
+  .card {
+    padding: var(--space-lg);
+  }
+
+  .practiceStats {
+    gap: var(--space-md);
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 900px) {
+  .screen {
+    max-width: 1120px;
+    margin-inline: auto;
+    padding: var(--space-sm) var(--space-lg) 40px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .information .infoCard:nth-child(-n+2) {
+    min-height: 76px;
+  }
+
+  .information .examplesCard {
+    min-height: 132px;
+  }
+
+  .practiceCard {
+    min-height: 140px;
+  }
+}

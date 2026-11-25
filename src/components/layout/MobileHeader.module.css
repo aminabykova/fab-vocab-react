@@ -1,0 +1,73 @@
+.header {
+  height: 96px;
+  padding: 40px var(--page-gutter) 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-xs);
+
+  /* Keep the header above the Training color-hint backdrop. */
+  position: relative;
+  z-index: 2;
+}
+
+.title,
+.brand {
+  font-size: 22px;
+  font-weight: var(--font-weight-black);
+  line-height: 28px;
+}
+
+.brand:hover {
+  text-decoration: underline;
+}
+
+.inverted {
+  color: var(--paper);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--ink);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+/* The word detail screen takes over the whole mobile screen */
+.hidden {
+  display: none;
+}
+
+/* Small phones */
+
+@media (max-width: 359px) {
+  .title,
+  .brand {
+    font-size: var(--font-size-lg);
+  }
+}
+
+/* Tablets */
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .header {
+    max-width: 648px;
+    margin-inline: auto;
+  }
+}
+
+/* Desktop: the primary navigation carries the brand instead */
+
+@media (min-width: 900px) {
+  .header {
+    display: none;
+  }
+}

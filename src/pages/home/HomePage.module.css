@@ -1,0 +1,254 @@
+/* Home screen styles */
+
+.content {
+  max-width: 648px;
+  margin-inline: auto;
+  padding:
+    var(--space-md)
+    var(--page-gutter)
+    var(--navigation-clearance);
+}
+
+.contentEmpty {
+  max-width: none;
+  padding: 0;
+}
+
+.greeting {
+  max-width: 230px;
+  margin-bottom: var(--space-md);
+
+  font-size: 22px;
+  font-weight: var(--font-weight-black);
+  line-height: 1.2;
+}
+
+.overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+}
+
+/* Vocabulary statistics */
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xs);
+  padding-bottom: 6px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  gap: var(--space-2xs);
+
+  min-height: 76px;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.statLabel {
+  color: var(--gray);
+
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 24px;
+  font-weight: var(--font-weight-black);
+  line-height: 32px;
+}
+
+.statLearning {
+  background: var(--yellow);
+}
+
+.statMastered {
+  background: var(--green);
+}
+
+.statLearning .statLabel,
+.statMastered .statLabel {
+  color: var(--ink);
+}
+
+/* Practice reminder and training requirement */
+
+.reminder,
+.requirement {
+  font-weight: var(--font-weight-bold);
+  line-height: 18px;
+}
+
+.requirement {
+  color: var(--gray);
+}
+
+/* Today's pick */
+
+.pick {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  min-height: 166px;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  background: var(--pink);
+}
+
+.pickEyebrow {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-black);
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.pickEntry {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.pickWord {
+  font-size: 24px;
+  font-weight: var(--font-weight-black);
+  line-height: 32px;
+  overflow-wrap: anywhere;
+}
+
+.pickWord a:hover {
+  text-decoration: underline;
+}
+
+.pickDefinition {
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.pickPos {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 18px;
+}
+
+/* Actions */
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-xs);
+}
+
+/* Empty home */
+
+.emptyScreen {
+  min-height: calc(100vh - 178px);
+  min-height: calc(100dvh - 178px);
+  margin-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  padding: var(--space-md) var(--page-gutter);
+
+  display: grid;
+  place-items: center;
+}
+
+/* Small phones */
+
+@media (max-width: 359px) {
+  .actions .actionButton {
+    padding-inline: var(--space-xs);
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* Tablets */
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .greeting {
+    max-width: none;
+  }
+
+  .stat {
+    min-height: 92px;
+    padding: var(--space-lg);
+  }
+
+  .pick {
+    min-height: 190px;
+  }
+}
+
+/* Desktop */
+
+@media (min-width: 900px) {
+  .content {
+    max-width: 1032px;
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .greeting {
+    max-width: none;
+    margin-bottom: var(--space-2xl);
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-lg);
+  }
+
+  .statistics {
+    grid-column: 1;
+    grid-row: 1;
+    padding-bottom: 0;
+  }
+
+  .stat {
+    min-height: 100px;
+    padding: var(--space-xl);
+  }
+
+  .reminder,
+  .requirement {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .reminderContinuation {
+    display: block;
+  }
+
+  .actions {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .pick {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    min-height: 320px;
+  }
+
+  .pickWord {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .pickDefinition {
+    font-size: var(--font-size-md);
+  }
+
+  .emptyScreen {
+    min-height: 696px;
+    margin-bottom: 0;
+    padding: var(--space-xl) var(--page-gutter);
+  }
+}
