@@ -1,0 +1,14 @@
+/*
+  The eight word colors as reusable background classes. Components combine
+  them dynamically (`colors[word.color]`) wherever a word's color drives the
+  surface — dots, swatches, cards, distribution segments.
+*/
+
+.white { background: var(--paper); }
+.gray { background: var(--gray); }
+.black { background: var(--ink); }
+.red { background: var(--red); }
+.yellow { background: var(--yellow); }
+.green { background: var(--green); }
+.blue { background: var(--blue); }
+.pink { background: var(--pink); }

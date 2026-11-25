@@ -1,0 +1,76 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+
+  min-height: 46px;
+  padding: var(--space-sm) var(--space-lg);
+  border: 0;
+  border-radius: var(--radius-pill);
+
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: 18px;
+  text-align: center;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.primary {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.primary:hover {
+  background: var(--ink-soft);
+}
+
+.primary:disabled {
+  background: var(--gray);
+  color: var(--paper);
+}
+
+.secondary {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.secondary:hover {
+  background: var(--muted);
+}
+
+.danger {
+  background: var(--red);
+  color: var(--paper);
+}
+
+.danger:hover {
+  background: var(--red-soft);
+}
+
+.delete {
+  background: var(--muted);
+  color: var(--red);
+}
+
+.delete:hover {
+  background: var(--canvas);
+}
+
+/* Compact size variant for toolbar buttons */
+.compact {
+  min-height: 36px;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+
+/* Small phones */
+
+@media (max-width: 359px) {
+  .button {
+    padding-inline: var(--space-md);
+  }
+}

@@ -1,0 +1,54 @@
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+
+  min-height: 36px;
+}
+
+.option {
+  position: relative;
+
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: transform var(--transition-fast);
+}
+
+.option:hover {
+  transform: scale(1.1);
+}
+
+.option input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.option:has(input:checked) {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--ink);
+  box-shadow: inset 0 0 0 3px var(--canvas);
+}
+
+.option:has(input:focus-visible) {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.optionWhite {
+  border-color: var(--gray);
+}
+
+/* Validation error on the surrounding fieldset marks every swatch */
+.error .option {
+  border-color: var(--red);
+}

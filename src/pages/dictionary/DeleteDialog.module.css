@@ -1,0 +1,41 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  padding: var(--space-xl);
+
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  background: rgb(0 0 0 / 60%);
+}
+
+.dialog {
+  display: grid;
+  gap: var(--space-sm);
+
+  width: min(318px, 100%);
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+  background: var(--paper);
+}
+
+.dialog h2 {
+  font-size: 18px;
+  font-weight: var(--font-weight-black);
+}
+
+.dialog p {
+  margin-bottom: var(--space-xs);
+
+  color: var(--gray);
+  line-height: var(--font-size-lg);
+}
+
+/* Desktop */
+
+@media (min-width: 900px) {
+  .dialog {
+    width: min(440px, 100%);
+  }
+}
